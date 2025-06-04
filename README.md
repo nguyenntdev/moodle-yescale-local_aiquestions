@@ -1,6 +1,6 @@
-# AI Text to questions generator #
+# YeScale AI Text to questions generator #
 
-This plugin allows you to automatically create questions on a given text using OpenAI ChatGPT. It requires an OpenAI API Key.
+This plugin allows you to automatically create questions on a given text using OpenAI ChatGPT. It requires an YeScale API Key.
 
 ## Installing via uploaded ZIP file ##
 

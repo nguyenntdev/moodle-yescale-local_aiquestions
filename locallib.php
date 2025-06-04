@@ -48,7 +48,7 @@ function local_aiquestions_get_questions($data) {
     $authorization = "api-key: " . $key;
 } else {
     // If the provider is not Azure, use the OpenAI API URL and OpenAI style HTTP header
-    $url = 'https://api.openai.com/v1/chat/completions';
+    $url = 'https://api.yescale.io/v1/chat/completions';
     $authorization = "Authorization: Bearer " . $key;
 }
     // Remove new lines and carriage returns.
