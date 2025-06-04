@@ -40,17 +40,10 @@ function local_aiquestions_get_questions($data) {
 
     $key = get_config('local_aiquestions', 'key');
     $model = get_config('local_aiquestions', 'model');
-    $provider = get_config('local_aiquestions', 'provider'); // OpenAI (default) or Azure
     
-    if ($provider === 'Azure') {
-    // If the provider is Azure, use the Azure API endpoint and Azure-specific HTTP header
-    $url = get_config('local_aiquestions', 'azure_api_endpoint'); // Use the Azure API endpoint from settings
-    $authorization = "api-key: " . $key;
-} else {
-    // If the provider is not Azure, use the OpenAI API URL and OpenAI style HTTP header
-    $url = 'https://api.openai.com/v1/chat/completions';
+    // Use YeScale API
+    $url = 'https://api.yescale.io/v1/chat/completions';
     $authorization = "Authorization: Bearer " . $key;
-}
     // Remove new lines and carriage returns.
     $story = str_replace("\n", " ", $data->story);
     $story = str_replace("\r", " ", $story);

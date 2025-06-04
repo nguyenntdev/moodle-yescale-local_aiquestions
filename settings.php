@@ -29,26 +29,15 @@ if ($hassiteconfig) {
     $settings = new admin_settingpage('local_aiquestions_settings', new lang_string('pluginname', 'local_aiquestions'));
 
     // Language model provider.
-    $provideroptions = ['OpenAI' => 'OpenAI',
-                'Azure' => 'Azure'
+    $provideroptions = ['YeScale' => 'YeScale'
                 ];
     $settings->add( new admin_setting_configselect(
         'local_aiquestions/provider',
         get_string('provider', 'local_aiquestions'),
         get_string('providerdesc', 'local_aiquestions'),
-        'OpenAI',
+        'YeScale',
         $provideroptions,
     ));
-
-    // Azure endpoint.
-
-    $settings->add(new admin_setting_configtext(
-    'local_aiquestions/azure_api_endpoint',
-    get_string('azureapiendpoint', 'local_aiquestions'),
-    get_string('azureapiendpointdesc', 'local_aiquestions'),
-    '', PARAM_URL
-    ));
-
 
     // OpenAI key.
     $settings->add( new admin_setting_configpasswordunmask(
@@ -59,7 +48,13 @@ if ($hassiteconfig) {
     ));
 
     // Model.
-    $options = ['gpt-3.5-turbo' => 'gpt-3.5-turbo',
+    $options = ['gpt-4o' => 'gpt-4o',
+                'gpt-4o-mini' => 'gpt-4o-mini',
+                'gpt-4.1-2025-04-14' => 'gpt-4.1-2025-04-14',
+                'gpt-4.1-mini-2025-04-14' => 'gpt-4.1-mini-2025-04-14',
+                'gpt-4.1-nano-2025-04-14' => 'gpt-4.1-nano-2025-04-14',
+                'gpt-4-turbo' => 'gpt-4-turbo',
+                'gpt-3.5-turbo' => 'gpt-3.5-turbo',
                 'gpt-4' => 'gpt-4'
                 ];
     $settings->add( new admin_setting_configselect(

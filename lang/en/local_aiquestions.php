@@ -26,23 +26,21 @@
 defined('MOODLE_INTERNAL') || die();
 
 // Basics.
-$string['pluginname'] = 'AI text to questions generator';
+$string['pluginname'] = 'YeScale AI text to questions generator';
 $string['pluginname_desc'] = 'This plugin allows you to automatically generate questions from a text using a language AI (eg chatGPT).';
 $string['pluginname_help'] = 'Use this plugin from the course administration menu or the question bank.';
-$string['privacy:metadata'] = 'AI text to questions generator does not store any personal data.';
-$string['aiquestions'] = 'AI Questions';
+$string['privacy:metadata'] = 'YeScale AI text to questions generator does not store any personal data.';
+$string['aiquestions'] = 'YeScale AI Questions';
 
 // Settings page.
 $string['provider'] = 'GPT provider';
-$string['providerdesc'] = 'Select if you are using Azure of OpenAI';
-$string['azureapiendpoint'] = 'Azure API Endpoint';
-$string['azureapiendpointdesc'] = 'Enter the Azure API endpoint URL here';
-$string['openaikey'] = 'OpenAI or Azure API key';
-$string['openaikeydesc'] = 'You can get an OpenAI API key from <a href="https://platform.openai.com/account/api-keys">https://platform.openai.com/account/api-keys</a><br>
+$string['providerdesc'] = 'YeScale AI provider for text to questions generation';
+$string['openaikey'] = 'YeScale API key';
+$string['openaikeydesc'] = 'You can get a YeScale API key from <a href="https://yescale.io">YeScale</a><br>
 Select the "+ Create New Secret Key" button and copy the key to this field.<br>
-Note that you need to have an OpenAI account that includes billing settings to get an API key.';
+Note that you need to have a YeScale account that includes billing settings to get an API key.';
 $string['model'] = 'Model';
-$string['model_desc'] = 'Language model to use. <a href="https://platform.openai.com/docs/models/">More info</a>.';
+$string['model_desc'] = 'Language model to use. <a href="https://yescale.io/models">More info</a>.';
 $string['presetname'] = 'Preset name';
 $string['presetnamedesc'] = 'Name that will be shown to the user';
 $string['presetprimer'] = 'Preset primer';
@@ -50,9 +48,9 @@ $string['presetinstructions'] = 'Preset instructions';
 $string['presetexample'] = 'Preset example';
 $string['numoftries'] = '<b>{$a}</b> tries';
 $string['numoftriesset'] = 'Number of Tries';
-$string['numoftriesdesc'] = 'Number of tries to send to OpenAI';
+$string['numoftriesdesc'] = 'Number of tries to send to YeScale';
 $string['presets'] = 'Presets';
-$string['presetsdesc'] = 'You can specify up to 10 presets, which users will be able to select in their courses. Users will still be able to edit the presets before sending them to OpenAI.';
+$string['presetsdesc'] = 'You can specify up to 10 presets, which users will be able to select in their courses. Users will still be able to edit the presets before sending them to YeScale.';
 $string['preset'] = 'Preset';
 $string['shareyourprompts'] = 'You can find more prompt ideas or share yours at <a target="_blank" href="https://docs.moodle.org/402/en/AI_Text_to_questions_generator">the Moodle Docs page for this plugin</a>.';
 
@@ -80,7 +78,7 @@ $string['createdquestionwithid'] = 'Created question with id ';
 $string['tasksuccess'] = 'The question generation task was successfully created';
 $string['generating'] = 'Generating your questions... (You can safely leave this page, and check later on the question bank)';
 $string['generationfailed'] = 'The question generation failed after {$a} tries';
-$string['generationtries'] = 'Number of tries sent to OpenAI: <b>{$a}</b>';
+$string['generationtries'] = 'Number of tries sent to YeScale: <b>{$a}</b>';
 $string['outof'] = 'out of';
 $string['preview'] = 'Preview question in new tab';
 $string['cronoverdue'] = 'The cron task seems not to run,
@@ -93,7 +91,7 @@ $string['createdquestionssuccess'] = 'Created questions successfully';
 $string['errornotcreated'] = 'Error: questions were not created';
 
 // Preset defaults.
-$string['presetnamedefault1'] = "Multiple choice question (english)";
+$string['presetnamedefault1'] = "Multiple choice question (English)";
 $string['presetprimerdefault1'] = "You are a helpful teacher's assistant that creates multiple choice questions based on the topics given by the user.";
 $string['presetinstructionsdefault1'] = "Please write a multiple choice question in English language in GIFT format on a topic I will specify to you separately GIFT format use equal sign for right answer and tilde sign for wrong answer at the beginning of answers. For example: '::Question title:: Question text { =right answer#feedback ~wrong answer#feedback ~wrong answer#feedback ~wrong answer#feedback }' Please have a blank line between questions. Do not include the question title in the beginning of the question text.";
 $string['presetexampledefault1'] = "::Indexicality and iconicity 1:: Imagine that you are standing on a lake shore. A wind rises, creating waves on the lake surface. According to C.S. Peirce, in what way the waves signify the wind? { =The relationship is both indexical and iconical.#Correct. There is a connection of spatio-temporal contiguity between the wind and the waves, which is a determining feature of indexicality. There is also a formal resemblance between wind direction and the direction of the waves, which is a determining feature of iconicity.  ~The relationship is indexical.#Almost correct. There is a connection of spatio-temporal contiguity between the wind and the waves, which, according to Peirce, is a determining feature of indexicality. However, there is additional signification taking place as well. ~There is no sign phenomena betweem the wind and the waves, they are two separate signs.#Incorrect. The movement of the waves is determined by the wind. ~The relationship between the wind and the waves is symbolic.#Incorrect. The movement of the waves is not arbitrary, which would be the case if the relationship was symbolic. }";
